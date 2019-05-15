@@ -1,5 +1,6 @@
 import { appTemplate } from './app.template';
 import { AppModel } from './app.model';
+import { TodoModule } from './todo/todo.module';
 
 export const AppComponent = {
 
@@ -12,11 +13,7 @@ export const AppComponent = {
     initEvents() {
         this.appElement.addEventListener('click', event => {
             if (event.target.className === 'btn-todo') {
-                import( /* webpackChunkName: "todo" */ './todo/todo.module')
-                    .then(lazyModule => {
-                        lazyModule.TodoModule.init();
-                    })
-                    .catch(error => 'An error occurred while loading Module');
+                TodoModule.init();
             }
         });
 
