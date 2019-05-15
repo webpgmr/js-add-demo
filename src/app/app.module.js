@@ -5,13 +5,13 @@ import {
 export const App = {
     init() {
         this.initComponents();
-        this.initServiceWorker();
+        // this.initServiceWorker();
     },
 
     initComponents() {
         AppComponent.init();
     },
-
+    /*
     initServiceWorker() {
         if (!navigator.serviceWorker) {
             return;
@@ -24,5 +24,5 @@ export const App = {
             .catch((error) => {
                 console.log('Some error while registering sw:', error);
             });
-    }
+    }*/
 };
